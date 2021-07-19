@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
 import './App.css';
-import Snake from './Snake'
-import Food from './Food'
+import Snake from './Snake';
+import Food from './Food';
+import PostList from './posts/postList';
 
 const RandCords = () => {
   let min = 1;
@@ -133,10 +134,13 @@ class App extends Component {
 
   render() {
     return (
-    <div className="game-area">
-        <Snake snakeDots={this.state.snakeDots} />
-        <Food dot = {this.state.food}/>
-    </div>
+      <div>
+        <PostList></PostList>
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots} />
+          <Food dot = {this.state.food}/>
+          </div>
+      </div>
     );
   }
 }
